@@ -7,12 +7,12 @@ import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-black text-white">
       <Hero />
       <About />
-      <Experience />
       <Projects />
       <Skills />
+      <Experience />
       <Contact />
     </main>
   );

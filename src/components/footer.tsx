@@ -21,11 +21,7 @@ export function Footer() {
               LinkedIn
             </a>
           </Button>
-          <Button variant="ghost" size="sm" asChild>
-            <a href={siteConfig.links.portfolio} target="_blank" rel="noopener noreferrer">
-              Portfolio
-            </a>
-          </Button>
+
         </div>
       </div>
     </footer>

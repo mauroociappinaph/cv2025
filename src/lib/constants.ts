@@ -7,7 +7,6 @@ export const siteConfig = {
   links: {
     github: "https://github.com/maurojoseciappina",
     linkedin: "https://www.linkedin.com/in/maurojoseciappina",
-    portfolio: "https://maurociappina.vercel.app",
   },
   experience: [
     {
