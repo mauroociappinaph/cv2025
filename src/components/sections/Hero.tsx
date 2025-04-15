@@ -4,101 +4,94 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/constants";
 import Image from "next/image";
+import { ChevronDownCircle } from "lucide-react";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export function Hero() {
+  const [text, setText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  const fullText = "Full Stack Developer";
+
+  useEffect(() => {
+    if (isTyping) {
+      if (text.length < fullText.length) {
+        const timeout = setTimeout(() => {
+          setText(fullText.slice(0, text.length + 1));
+        }, 100);
+        return () => clearTimeout(timeout);
+      } else {
+        setIsTyping(false);
+        const timeout = setTimeout(() => {
+          setIsTyping(true);
+          setText("");
+        }, 3000);
+        return () => clearTimeout(timeout);
+      }
+    }
+  }, [text, isTyping]);
+
   return (
-    <section className="relative min-h-screen grid grid-cols-1 lg:grid-cols-2">
-      {/* Left Section */}
-      <div className="relative z-10 flex items-center justify-center p-8 lg:p-16 bg-background/90 backdrop-blur-sm">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-2xl"
-        >
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight mb-6">
-            <span className="text-primary block">Desarrollador</span>
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Full Stack
-            </span>
-          </h1>
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
-            {siteConfig.description}
-          </p>
-          <div className="flex flex-wrap gap-4">
+    <section className="relative h-screen flex items-center justify-center bg-black overflow-hidden">
+      {/* Animated background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-zinc-900 opacity-80"></div>
 
-            <Button size="lg" variant="outline" asChild>
-              <a
-                href={siteConfig.links.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg"
-              >
-                LinkedIn
-              </a>
-            </Button>
-          </div>
-        </motion.div>
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center opacity-20"></div>
+
+      {/* Content */}
+      <div className="relative z-10 container text-center px-4">
+        <div className="mb-6 inline-block">
+          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium tracking-wider">
+            BIENVENIDO A MI PORTFOLIO
+          </span>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
+          Mauro José Ciappina
+        </h1>
+
+        <div className="h-12 mb-8">
+          <h2 className="text-2xl md:text-3xl text-gray-300 relative inline-block">
+            <span>{text}</span>
+            <span className={`absolute -right-3 top-0 h-full w-[2px] bg-primary ${isTyping ? 'animate-pulse' : 'opacity-0'}`}></span>
+          </h2>
+        </div>
+
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+          Creando soluciones innovadoras para problemas complejos a través del desarrollo de software moderno y eficiente.
+        </p>
+
+        <div className="flex gap-4 justify-center">
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90"
+            asChild
+          >
+            <Link href="#projects">
+              Ver Proyectos
+            </Link>
+          </Button>
+
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white/20 text-white hover:bg-white/10"
+            asChild
+          >
+            <Link href="#contact">
+              Contactar
+            </Link>
+          </Button>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <Link href="#about" passHref>
+            <ChevronDownCircle className="h-10 w-10 text-primary/80 hover:text-primary transition-colors cursor-pointer" />
+          </Link>
+        </div>
       </div>
-
-      {/* Right Section - Images Grid */}
-      <div className="absolute inset-0 lg:relative grid grid-cols-2 gap-2 p-2">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative h-full w-full"
-        >
-          <Image
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000"
-            alt="Coding"
-            fill
-            className="object-cover rounded-lg"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="relative h-full w-full"
-        >
-          <Image
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000"
-            alt="Technology"
-            fill
-            className="object-cover rounded-lg"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="relative h-full w-full"
-        >
-          <Image
-            src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?q=80&w=1000"
-            alt="Development"
-            fill
-            className="object-cover rounded-lg"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="relative h-full w-full"
-        >
-          <Image
-            src="https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=1000"
-            alt="Innovation"
-            fill
-            className="object-cover rounded-lg"
-          />
-        </motion.div>
-      </div>
-
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-background/10 pointer-events-none" />
     </section>
   );
 }
