@@ -11,25 +11,28 @@ import { useState, useEffect } from "react";
 export function Hero() {
   const [text, setText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
-  const fullText = "Full Stack Developer";
+  const [wordIndex, setWordIndex] = useState(0);
+  const titles = ["Systems Architect", "Lead Full Stack Engineer", "Open Source Creator"];
 
   useEffect(() => {
+    const currentTitle = titles[wordIndex];
     if (isTyping) {
-      if (text.length < fullText.length) {
+      if (text.length < currentTitle.length) {
         const timeout = setTimeout(() => {
-          setText(fullText.slice(0, text.length + 1));
-        }, 100);
+          setText(currentTitle.slice(0, text.length + 1));
+        }, 80);
         return () => clearTimeout(timeout);
       } else {
         setIsTyping(false);
         const timeout = setTimeout(() => {
           setIsTyping(true);
           setText("");
-        }, 3000);
+          setWordIndex((prev) => (prev + 1) % titles.length);
+        }, 2500);
         return () => clearTimeout(timeout);
       }
     }
-  }, [text, isTyping]);
+  }, [text, isTyping, wordIndex]);
 
   return (
     <section className="relative h-screen flex items-center justify-center bg-black overflow-hidden">
@@ -42,8 +45,8 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container text-center px-4">
         <div className="mb-6 inline-block">
-          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium tracking-wider">
-            BIENVENIDO A MI PORTFOLIO
+          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium tracking-wider uppercase">
+            Engineering of Results 2026
           </span>
         </div>
 
@@ -59,7 +62,7 @@ export function Hero() {
         </div>
 
         <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-          Creando soluciones innovadoras para problemas complejos a través del desarrollo de software moderno y eficiente.
+          Diseñando fuerzas laborales sintéticas y arquitecturas soberanas que transforman el ROI de la IA.
         </p>
 
         <div className="flex gap-4 justify-center">

@@ -14,47 +14,7 @@ type Experience = {
 };
 
 export function Experience() {
-  const experiences: Experience[] = [
-    {
-      title: "Senior Full Stack Developer",
-      company: "TechSolutions Inc.",
-      location: "Buenos Aires, Argentina (Remoto)",
-      period: "Enero 2022 - Presente",
-      description: [
-        "Desarrollo y mantenimiento de aplicaciones web de alto rendimiento utilizando React y Node.js.",
-        "Implementación de arquitecturas serverless con AWS Lambda y API Gateway.",
-        "Diseño y optimización de bases de datos MongoDB y PostgreSQL para manejar grandes volúmenes de datos.",
-        "Liderazgo técnico de un equipo de 5 desarrolladores, brindando mentoría y revisiones de código."
-      ],
-      technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB", "PostgreSQL", "Docker"]
-    },
-    {
-      title: "Full Stack Developer",
-      company: "Digital Innovation Agency",
-      location: "Buenos Aires, Argentina",
-      period: "Marzo 2020 - Diciembre 2021",
-      description: [
-        "Desarrollo de aplicaciones web y móviles para clientes en diversos sectores como finanzas, retail y salud.",
-        "Implementación de sistemas de autenticación y autorización usando JWT y OAuth 2.0.",
-        "Creación de APIs RESTful y GraphQL para integración con sistemas de terceros.",
-        "Participación en todo el ciclo de vida del desarrollo, desde la planificación hasta el despliegue."
-      ],
-      technologies: ["JavaScript", "React", "Express", "GraphQL", "MySQL", "Firebase"]
-    },
-    {
-      title: "Frontend Developer",
-      company: "Creative Web Studios",
-      location: "Córdoba, Argentina",
-      period: "Junio 2018 - Febrero 2020",
-      description: [
-        "Desarrollo de interfaces de usuario responsivas y accesibles utilizando HTML, CSS y JavaScript.",
-        "Implementación de diseños UI/UX siguiendo las mejores prácticas y estándares de la industria.",
-        "Optimización del rendimiento del front-end mediante lazy loading, code splitting y otras técnicas.",
-        "Colaboración con diseñadores para transformar mockups en código funcional con alta fidelidad."
-      ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Sass", "Webpack"]
-    }
-  ];
+  const experiences = siteConfig.experience;
 
   return (
     <section id="experience" className="py-20 bg-black">

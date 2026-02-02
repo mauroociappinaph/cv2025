@@ -12,50 +12,20 @@ type SkillCategory = {
 export function Skills() {
   const skillCategories: SkillCategory[] = [
     {
-      title: "Frontend",
-      skills: [
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Vue",
-        "HTML5",
-        "CSS3",
-        "Flutter",
-      ],
+      title: "AI & Architecture",
+      skills: siteConfig.skills.aiArchitecture,
     },
     {
       title: "Backend",
-      skills: [
-        "Java",
-        "Spring",
-        "Node.js",
-        "NestJS",
-        "Python",
-        "C#",
-        "Delphi",
-      ],
+      skills: siteConfig.skills.backend,
     },
     {
-      title: "Bases de Datos",
-      skills: [
-        "PostgreSQL",
-        "MySQL",
-        "MongoDB",
-        "Firebase",
-        "GraphQL",
-      ],
+      title: "Frontend",
+      skills: siteConfig.skills.frontend,
     },
     {
-      title: "DevOps & Herramientas",
-      skills: [
-        "Git",
-        "Docker",
-        "AWS",
-        "Google Cloud",
-        "Azure DevOps",
-        "Heroku",
-        "NPM",
-      ],
+      title: "Data & Infra",
+      skills: siteConfig.skills.infraData,
     },
   ];
 
