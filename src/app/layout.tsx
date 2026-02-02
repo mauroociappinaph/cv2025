@@ -9,8 +9,8 @@ import { ThemeProvider } from "@/components/sections/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mauro José Ciappina | Full Stack Developer",
-  description: "Portfolio profesional de Mauro José Ciappina, Full Stack Developer especializado en Backend Development.",
+  title: "Mauro José Ciappina | Systems Architect & Lead Full Stack Engineer",
+  description: "Portfolio profesional de Mauro José Ciappina, Systems Architect especializado en arquitecturas autónomas, IA soberana e ingeniería de resultados.",
 };
 
 export default function RootLayout({
