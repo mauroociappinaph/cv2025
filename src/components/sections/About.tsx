@@ -13,31 +13,19 @@ export function About() {
 
             <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
               <p>
-                Soy <span className="text-white">Mauro José Ciappina</span>, un desarrollador
-                <span className="text-white"> Full Stack</span> apasionado por resolver problemas
-                tecnológicos complejos y crear soluciones innovadoras.
+                Soy <span className="text-white">Mauro José Ciappina</span>, un <span className="text-white">Systems Architect</span> enfocado en la construcción de infraestructuras autónomas que operan bajo el estándar de <span className="text-white">Ingeniería de Resultados</span>.
               </p>
 
               <p>
-                Mi enfoque se centra en el desarrollo de aplicaciones web y móviles
-                utilizando las tecnologías más modernas y eficientes. Me especializo
-                en la creación de experiencias de usuario intuitivas y atractivas,
-                respaldadas por arquitecturas robustas y escalables.
+                Mi especialidad es el diseño de <span className="text-white">Fuerzas Laborales Sintéticas</span>: ecosistemas de agentes autónomos que gestionan ciclos comerciales de punta a punta, optimizando el uso de recursos y garantizando la soberanía de los datos.
               </p>
 
               <p>
-                Con experiencia en proyectos de diversa complejidad, me caracterizo
-                por mi capacidad para adaptarme rápidamente a nuevos desafíos y
-                tecnologías. Me apasiona el aprendizaje continuo y la búsqueda
-                constante de las mejores prácticas en desarrollo de software.
+                He desarrollado arquitecturas que reducen los costos de IA en un 90% mediante <span className="text-white">Inferencia Híbrida</span> y sistemas que se auto-optimizan utilizando bucles de <span className="text-white">Meta-Aprendizaje</span> inspirados en los principios de Schmidhuber.
               </p>
 
               <p>
-                Disfruto colaborando en equipos multidisciplinarios, aportando
-                mi conocimiento técnico y creatividad para alcanzar soluciones
-                óptimas. Mi objetivo es crear productos tecnológicos que no solo
-                funcionen perfectamente, sino que también generen un impacto
-                positivo en quienes los utilizan.
+                Desde la creación de librerías de alto impacto como <span className="text-white">HttpLazy</span> hasta el despliegue de motores de IA soberanos, mi objetivo es transformar la complejidad técnica en activos de negocio escalables, seguros y eficientes.
               </p>
             </div>
           </div>
